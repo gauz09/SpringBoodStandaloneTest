@@ -17,12 +17,14 @@ public class MySqlUserDao {
 	
 	public void insertUserData(User user) {
 	    try {
-	      jdbcTemplate.update(INSERT_USER, user.getUserId(),
-	    		  user.getEmail(), user.getfName(),
-	    		  user.getlName());
+	    	jdbcTemplate.update(INSERT_USER, 
+	    			user.getUserId(),
+	    			user.getEmail(), 
+	    			user.getfName(),
+	    			user.getlName());
 	    } catch (DataAccessException e) {
-	      System.out.println("Exception while inserting user.");
-	      e.printStackTrace();
+	    	System.out.println("Exception while inserting user.");
+	    	e.printStackTrace();
 	    }
 	}	
 }
